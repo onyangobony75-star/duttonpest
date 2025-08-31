@@ -100,8 +100,8 @@ const ServicesSection = () => {
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="sm">
-                    Get Quote
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/quote">Get Quote</Link>
                   </Button>
                 </div>
               </CardContent>

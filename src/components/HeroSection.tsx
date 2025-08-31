@@ -1,6 +1,7 @@
 import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -45,9 +46,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" size="lg" className="group">
-              Book Free Inspection
-              <Phone className="h-5 w-5 group-hover:animate-pulse" />
+            <Button asChild variant="hero" size="lg" className="group">
+              <Link to="/quote">
+                Book Free Inspection
+                <Phone className="h-5 w-5 group-hover:animate-pulse" />
+              </Link>
             </Button>
             <Button variant="outline" size="lg" className="group">
               <MessageCircle className="h-5 w-5" />

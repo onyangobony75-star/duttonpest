@@ -70,8 +70,8 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline">
-              Get Free Quote
+            <Button asChild variant="outline">
+              <Link to="/quote">Get Free Quote</Link>
             </Button>
             <Button variant="emergency">
               Emergency Service
@@ -104,8 +104,8 @@ const Header = () => {
                 Contact
               </Link>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="outline" className="w-full">
-                  Get Free Quote
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/quote">Get Free Quote</Link>
                 </Button>
                 <Button variant="emergency" className="w-full">
                   Emergency Service
