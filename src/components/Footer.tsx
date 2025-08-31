@@ -48,9 +48,6 @@ const Footer = () => {
               <Link to="/about" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 About Us
               </Link>
-              <Link to="/service-areas" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                Service Areas
-              </Link>
               <Link to="/contact" className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Contact
               </Link>
