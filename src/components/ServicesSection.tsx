@@ -38,7 +38,7 @@ const ServicesSection = () => {
       title: "General Pest Control",
       description: "Comprehensive pest management for ants, spiders, flies, and other common pests.",
       features: ["Monthly treatments", "Seasonal protection", "Emergency service"],
-      href: "/services/general-pests"
+      href: "/services/general-pest"
     },
     {
       icon: Bug,
