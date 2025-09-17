@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Phone, MessageCircle, Mail, Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const isActive = (path: string) => {
+    if (path === "/" && location.pathname === "/") return true;
+    if (path !== "/" && location.pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
@@ -54,16 +61,36 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-foreground hover:text-primary font-medium transition-colors">
+            <Link 
+              to="/" 
+              className={`text-foreground hover:text-primary font-medium transition-colors px-3 py-2 rounded-md relative ${
+                isActive("/") ? "bg-destructive text-destructive-foreground" : ""
+              }`}
+            >
               Home
             </Link>
-            <Link to="/services" className="text-foreground hover:text-primary font-medium transition-colors">
+            <Link 
+              to="/services" 
+              className={`text-foreground hover:text-primary font-medium transition-colors px-3 py-2 rounded-md relative ${
+                isActive("/services") ? "bg-destructive text-destructive-foreground" : ""
+              }`}
+            >
               Services
             </Link>
-            <Link to="/about" className="text-foreground hover:text-primary font-medium transition-colors">
+            <Link 
+              to="/about" 
+              className={`text-foreground hover:text-primary font-medium transition-colors px-3 py-2 rounded-md relative ${
+                isActive("/about") ? "bg-destructive text-destructive-foreground" : ""
+              }`}
+            >
               About Us
             </Link>
-            <Link to="/contact" className="text-foreground hover:text-primary font-medium transition-colors">
+            <Link 
+              to="/contact" 
+              className={`text-foreground hover:text-primary font-medium transition-colors px-3 py-2 rounded-md relative ${
+                isActive("/contact") ? "bg-destructive text-destructive-foreground" : ""
+              }`}
+            >
               Contact
             </Link>
           </div>
@@ -91,16 +118,36 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
-              <Link to="/" className="text-foreground hover:text-primary font-medium transition-colors py-2">
+              <Link 
+                to="/" 
+                className={`text-foreground hover:text-primary font-medium transition-colors py-2 px-3 rounded-md ${
+                  isActive("/") ? "bg-destructive text-destructive-foreground" : ""
+                }`}
+              >
                 Home
               </Link>
-              <Link to="/services" className="text-foreground hover:text-primary font-medium transition-colors py-2">
+              <Link 
+                to="/services" 
+                className={`text-foreground hover:text-primary font-medium transition-colors py-2 px-3 rounded-md ${
+                  isActive("/services") ? "bg-destructive text-destructive-foreground" : ""
+                }`}
+              >
                 Services
               </Link>
-              <Link to="/about" className="text-foreground hover:text-primary font-medium transition-colors py-2">
+              <Link 
+                to="/about" 
+                className={`text-foreground hover:text-primary font-medium transition-colors py-2 px-3 rounded-md ${
+                  isActive("/about") ? "bg-destructive text-destructive-foreground" : ""
+                }`}
+              >
                 About Us
               </Link>
-              <Link to="/contact" className="text-foreground hover:text-primary font-medium transition-colors py-2">
+              <Link 
+                to="/contact" 
+                className={`text-foreground hover:text-primary font-medium transition-colors py-2 px-3 rounded-md ${
+                  isActive("/contact") ? "bg-destructive text-destructive-foreground" : ""
+                }`}
+              >
                 Contact
               </Link>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
