@@ -45,7 +45,7 @@ const Services = () => {
       description: "Comprehensive pest management for ants, spiders, flies, and other common household pests.",
       features: ["Monthly treatments", "Seasonal protection", "Interior/exterior service", "Emergency calls"],
       price: "Starting at $99/month",
-      href: "/services/general-pests"
+      href: "/services/general-pest"
     },
     {
       icon: Bug,

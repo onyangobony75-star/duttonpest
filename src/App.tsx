@@ -35,6 +35,7 @@ const App = () => (
           <Route path="/services/bed-bugs" element={<BedBugs />} />
           <Route path="/services/cockroaches" element={<Cockroaches />} />
           <Route path="/services/general-pest" element={<GeneralPest />} />
+          <Route path="/services/general-pests" element={<GeneralPest />} />
           <Route path="/services/commercial" element={<Commercial />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
